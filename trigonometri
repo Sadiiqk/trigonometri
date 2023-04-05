@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <math.h>
+
+#define PI 3.14159265
+
+int main()
+{
+    int val;
+    double vinkel, radianer, resultat;
+    
+    printf("Välkommen till Trigonometrikalkylatorn!\n\n");
+    
+    do {
+        printf("Välj ett alternativ:\n");
+        printf("1. Konvertera grader till radianer\n");
+        printf("2. Konvertera radianer till grader\n");
+        printf("3. Beräkna sin av en vinkel\n");
+        printf("4. Beräkna cos av en vinkel\n");
+        printf("5. Beräkna tan av en vinkel\n");
+        printf("6. Avsluta programmet\n");
+        printf("Ange ditt val (1-6): ");
+        scanf("%d", &val);
+        
+        switch(val) {
+            case 1:
+                printf("\nAnge en vinkel i grader: ");
+                scanf("%lf", &vinkel);
+                radianer = vinkel * (PI / 180);
+                printf("%.2lf grader = %.2lf radianer\n\n", vinkel, radianer);
+                break;
+            case 2:
+                printf("\nAnge en vinkel i radianer: ");
+                scanf("%lf", &radianer);
+                vinkel = radianer * (180 / PI);
+                printf("%.2lf radianer = %.2lf grader\n\n", radianer, vinkel);
+                break;
+            case 3:
+                printf("\nAnge en vinkel i grader: ");
+                scanf("%lf", &vinkel);
+                radianer = vinkel * (PI / 180);
+                resultat = sin(radianer);
+                printf("Sinus av %.2lf grader är %.2lf\n\n", vinkel, resultat);
+                break;
+            case 4:
+                printf("\nAnge en vinkel i grader: ");
+                scanf("%lf", &vinkel);
+                radianer = vinkel * (PI / 180);
+                resultat = cos(radianer);
+                printf("Cosinus av %.2lf grader är %.2lf\n\n", vinkel, resultat);
+                break;
+            case 5:
+                printf("\nAnge en vinkel i grader: ");
+                scanf("%lf", &vinkel);
+                radianer = vinkel * (PI / 180);
+                resultat = tan(radianer);
+                printf("Tangent av %.2lf grader är %.2lf\n\n", vinkel, resultat);
+                break;
+            case 6:
+                printf("\nTack för att du använde Trigonometrikalkylatorn!\n");
+                break;
+            default:
+                printf("\nOgiltigt val. Ange ett nummer mellan 1 och 6.\n\n");
+        }
+    } while (val != 6);
+    
+    return 0;
+}
